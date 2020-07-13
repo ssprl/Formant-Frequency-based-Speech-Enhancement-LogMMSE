@@ -11,7 +11,7 @@ You can find the paper for this GitHub repository : https://ieeexplore.ieee.org/
 
 ## Users Guides
 
-[iOS]( User’s Guide- iOS (F-logMMSE).pdf)
+[iOS](https://github.com/ssprl/Formant-Frequency-based-Speech-Enhancement-LogMMSE/blob/master/User%E2%80%99s%20Guide-%20iOS%20(F-logMMSE)-final.pdf)
 
 ## Requirements 
 - iPhone 7 running iOS 10.3
