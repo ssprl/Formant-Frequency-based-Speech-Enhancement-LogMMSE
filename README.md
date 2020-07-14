@@ -1,5 +1,3 @@
-# Formant-Frequency-based-Speech-Enhancement-LogMMSE
-
 # Formant Frequency-based Speech Enhancement technique to improve intelligibility for hearing aid users with smartphone as an assistive device.
 
 ## Overview
@@ -23,6 +21,4 @@ For any utilization of the code content of this repository, one of the following
 
 G. S. Bhat, N. Shankar, C. K. A. Reddy and I. M. S. Panahi, "Formant frequency-based speech enhancement technique to improve intelligibility for hearing aid users with smartphone as an assistive device," 2017 IEEE Healthcare Innovations and Point of Care Technologies (HI-POCT), Bethesda, MD, 2017, pp. 32-35, doi: 10.1109/HIC.2017.8227577.
 ## Disclaimer
-This work was supported in part by the National Institute of the Deafness and Other Communication Disorders (NIDCD) of the National
-
-Institutes of Health (NIH) under Award 1R01DC015430-02. The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH
+This work was supported in part by the National Institute of the Deafness and Other Communication Disorders (NIDCD) of the National Institutes of Health (NIH) under Award 1R01DC015430-02. The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH
