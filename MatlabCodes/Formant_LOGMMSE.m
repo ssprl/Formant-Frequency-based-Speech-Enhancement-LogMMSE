@@ -1,3 +1,5 @@
+#Created by Gautam Shreedhar Bhat
+
 function [xfinal] = Formant_LOGMMSE(x,Srate)
 
 [formant_freq] =[593.897011801963,1591.98279412604,2707.86579484156,3701.99968946960];
