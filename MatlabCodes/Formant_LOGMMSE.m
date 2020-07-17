@@ -1,4 +1,5 @@
 #Created by Gautam Shreedhar Bhat
+#UT Dallas
 
 function [xfinal] = Formant_LOGMMSE(x,Srate)
 
