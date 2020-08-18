@@ -1,20 +1,17 @@
 function [xfinal] = FormantLogMMSE(x,Fs)
 %
 %  Implements the Formant frequency based logMMSE algorithm [1].
-% 
-%  Usage:  logmmse(noisyFile, outputFile)
-%           
-%         infile - noisy speech file in .wav format
-%         outputFile - enhanced output file in .wav format
-%  
 %
-%  Example call:  logmmse('sp04_babble_sn10.wav','out_log.wav');
+%  Usage:  logmmse(noisyFile, outputFile)
+%
+%         x - samples of noisy speech noisy
+%         Fs - Sampling rate of the signal
 %
 %  References:
-%   [1] G. S. Bhat, N. Shankar, C. K. A. Reddy and I. M. S. Panahi, 
+%   [1] G. S. Bhat, N. Shankar, C. K. A. Reddy and I. M. S. Panahi,
 %       "Formant frequency-based speech enhancement technique to improve intelligibility for hearing aid users with smartphone as an assistive device,"
 %       2017 IEEE Healthcare Innovations and Point of Care Technologies (HI-POCT), Bethesda, MD, 2017, pp. 32-35, doi: 10.1109/HIC.2017.8227577.
-%   
+%
 %  Authors: Gautam Shreedhar Bhat
 %
 %  Copyright (c) 2017 by Gautam Shreedhar Bhat
@@ -79,7 +76,7 @@ for n=1:Nframes
     
     gammak=min(sig2./noise_mu2,40);  %--- posteriori SNR
     if n==1
-        ksi=aa+(1-aa)*max(gammak-1,0);   
+        ksi=aa+(1-aa)*max(gammak-1,0);
     else
         ksi=aa*Xk_prev./noise_mu2 + (1-aa)*max(gammak-1,0);
         
@@ -95,7 +92,7 @@ for n=1:Nframes
     end
     
     noise_mu2 = noise_pow./count;
-        
+    
     A=ksi./(1+ksi);  %--- Log-MMSE estimator
     vk_mmse=A.*gammak;
     ei_vk=0.5*expint(vk_mmse);
@@ -104,16 +101,16 @@ for n=1:Nframes
         for forfreq_bin_in=1:length(forfreq_binslc)
             if ((floor(forfreq_binslc(forfreq_bin_in))<=sig_in)&&(sig_in<=ceil(forfreq_binsuc(forfreq_bin_in))))
                 count1=count1+1;
-
+                
                 hw(sig_in)=A(sig_in)*exp(ei_vk(sig_in)); %--- LogMMSE Gain
                 break
             else
-      
-                hw(sig_in)= 0.8.*A(sig_in)*exp(ei_vk(sig_in)); %--- Scaled Gain for formants 
+                
+                hw(sig_in)= 0.8.*A(sig_in)*exp(ei_vk(sig_in)); %--- Scaled Gain for formants
             end
         end
     end
-
+    
     sig=sig.*hw';
     
     Xk_prev=sig.^2;  %--- save for estimation of a priori SNR in next frame
